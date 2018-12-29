@@ -25,7 +25,7 @@ An unofficial implementation of  'Domain Adaptive Faster R-CNN for Object Detect
 
 1.train the model,you need to download the pretrained model [vgg_caffe](https://github.com/jwyang/faster-rcnn.pytorch） which is different with pure pytorch pretrained model
 
-2.change the dataset root path in /lib/model/utils/config.py and some dataset dir path in  /lib/datasets/cityscape.py
+2.change the dataset root path in ./lib/model/utils/config.py and some dataset dir path in  ./lib/datasets/cityscape.py,the default data path is ./data
 
 3 Train the model
  ```Shell
