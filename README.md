@@ -12,11 +12,11 @@ An unofficial implementation of  'Domain Adaptive Faster R-CNN for Object Detect
 
 3. Download dataset
    
-   - we use cityscape and cityscapes-foggy datasets respectly as source and target,the cityscapes dataset could be download [here](https://www.cityscapes-dataset.com/downloads/)  
+   - we use cityscape and cityscapes-foggy datasets respectly as source and target,the cityscapes dataset could be download [Here](https://www.cityscapes-dataset.com/downloads/)  
    
    - the format of datasets is similar with VOC,you just need to split train.txt to train_s.txt and train_t.txt
    
-   - you can also download the dataset [here](https://drive.google.com/file/d/1mA0L5-1U_Vo-S8-cv12QBmhgG9FFf6nf/view?usp=sharing)
+   - you can also download the dataset [Here](https://drive.google.com/file/d/1mA0L5-1U_Vo-S8-cv12QBmhgG9FFf6nf/view?usp=sharing)
    
    
    
