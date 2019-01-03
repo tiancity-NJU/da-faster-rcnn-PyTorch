@@ -114,9 +114,6 @@ class _fasterRCNN(nn.Module):
         RCNN_loss_cls = 0
         RCNN_loss_bbox = 0
 
-
-
-
         if self.training:
             # classification loss
             RCNN_loss_cls = F.cross_entropy(cls_score, rois_label)
@@ -127,8 +124,6 @@ class _fasterRCNN(nn.Module):
 
         cls_prob = cls_prob.view(batch_size, rois.size(1), -1)
         bbox_pred = bbox_pred.view(batch_size, rois.size(1), -1)
-
-
 
         """ =================== for target =========================="""
 
@@ -174,10 +169,6 @@ class _fasterRCNN(nn.Module):
         # feed pooled features to top model
         tgt_pooled_feat = self._head_to_tail(tgt_pooled_feat)
 
-
-
-
-
         """  DA loss   """
 
         # DA LOSS
@@ -192,12 +183,10 @@ class _fasterRCNN(nn.Module):
         # Image DA
         base_prob = F.log_softmax(base_score, dim=1)
         DA_img_loss_cls = F.nll_loss(base_prob, base_label)
-
-
+        
         instance_sigmoid, same_size_label = self.RCNN_instanceDA(pooled_feat, need_backprop)
         instance_loss = nn.BCELoss()
         DA_ins_loss_cls = instance_loss(instance_sigmoid, same_size_label)
-
 
         #consistency_prob = torch.max(F.softmax(base_score, dim=1),dim=1)[0]
         consistency_prob = F.softmax(base_score, dim=1)[:,1,:,:]
