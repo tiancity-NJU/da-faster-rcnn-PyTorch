@@ -43,7 +43,7 @@ def parse_args():
   parser = argparse.ArgumentParser(description='Train a Fast R-CNN network')
   parser.add_argument('--dataset', dest='dataset',
                       help='training dataset',
-                      default='cityscapes', type=str)
+                      default='cityscape', type=str)
   parser.add_argument('--cfg', dest='cfg_file',
                       help='optional config file',
                       default='cfgs/vgg16.yml', type=str)
@@ -114,7 +114,7 @@ if __name__ == '__main__':
       args.imdb_name = "voc_2007_trainval"
       args.imdbval_name = "voc_2007_test"
       args.set_cfgs = ['ANCHOR_SCALES', '[4,8, 16, 32]', 'ANCHOR_RATIOS', '[0.5,1,2]']
-  elif args.dataset == "cityscapes":
+  elif args.dataset == "cityscape":
       print('loading our dataset...........')
       args.s_imdb_name = "cityscape_2007_train_s"
       args.t_imdb_name = "cityscape_2007_train_t"
